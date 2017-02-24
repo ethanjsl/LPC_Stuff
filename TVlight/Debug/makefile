@@ -28,8 +28,11 @@ endif
 # All Target
 all: TVlight.axf
 
+dependents:
+	-cd C:/Users/ethan/git/LPC_Stuff/TVlight/Release && $(MAKE) all
+
 # Tool invocations
-TVlight.axf: $(OBJS) $(USER_OBJS)
+TVlight.axf: $(OBJS) $(USER_OBJS) C:/Users/ethan/git/LPC_Stuff/TVlight/Release/TVlight.axf
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
 	arm-none-eabi-gcc -nostdlib -Xlinker -Map=TVlight.map -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T "../linker/lpc1114_flash_crp.ld" -o "TVlight.axf" $(OBJS) $(USER_OBJS) $(LIBS)
@@ -49,5 +52,6 @@ post-build:
 
 .PHONY: all clean dependents
 .SECONDARY: post-build
+C:/Users/ethan/git/LPC_Stuff/TVlight/Release/TVlight.axf:
 
 -include ../makefile.targets

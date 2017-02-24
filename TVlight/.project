@@ -3,6 +3,7 @@
 	<name>TVlight</name>
 	<comment></comment>
 	<projects>
+		<project>TVlight</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

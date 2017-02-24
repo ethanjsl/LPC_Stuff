@@ -1,19 +1,19 @@
-/*
- * Lights.h
- *
- *  Created on: 15 Feb 2017
- *      Author: ethan
+/**********************************************************************************
+ * Filename:		Lights.h
+ * Author:			Ethan Lyons
+ * Creation Date:	21.02.1993
+ * Description:		Header file for Lights.c
  */
 
 #ifndef LIGHTS_H_
 #define LIGHTS_H_
 
-uint32_t LightStatus;
-
 void Lights_init();
-void LightsOn();
+void LightsOn(uint32_t level);
 void LightsOff();
+void LightsSetLevel(uint32_t level);
+uint32_t LightsGetLevel();
+uint32_t LightsGetStatus();
 
-void PIOINT3_IRQHandler(void);
 
 #endif /* LIGHTS_H_ */
